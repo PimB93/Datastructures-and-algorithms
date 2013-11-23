@@ -29,7 +29,7 @@ public class Opdracht1
 	public long measureRunningTimeAlg1(int i)
 	{
 		long startTime = System.currentTimeMillis();		
-		Alg1(i);
+		alg1(i);
 		long endTime = System.currentTimeMillis();
 		long duration = endTime - startTime;
 		return duration;
@@ -37,7 +37,16 @@ public class Opdracht1
 	public long measureRunningTimeAlg2(int i)
 	{
 		long startTime = System.currentTimeMillis();		
-		Alg2(i);
+		alg2(i);
+		long endTime = System.currentTimeMillis();
+		long duration = endTime - startTime;
+		return duration;
+	}
+	
+	public long measureRunningTimeAlg3(int i)
+	{
+		long startTime = System.currentTimeMillis();		
+		alg3(i);
 		long endTime = System.currentTimeMillis();
 		long duration = endTime - startTime;
 		return duration;
@@ -48,7 +57,29 @@ public class Opdracht1
 		return min + (int)(Math.random() * max);
 		
 	}
-	public void Alg2(int aantal)
+	
+	public int[] swap(int [] a, int arrayPos, int getal )
+	{
+		int temp = arrayPos;		
+		a[arrayPos] = getal;
+		getal = temp;
+		return a;
+	}
+	
+	public void alg3(int aantal)
+	{
+		int[] sortedArray = new int[aantal];
+		
+		for(int i = 0; i < aantal; i++)
+		{
+			sortedArray[i] = i;			
+			int getal = randInt(0, aantal);
+			sortedArray = swap(sortedArray, sortedArray[i], getal);
+			
+			
+		}
+	}
+	public void alg2(int aantal)
 	{		
 		int[] sortedArray = new int[aantal];	
 		boolean[] used = new boolean[sortedArray.length + 1];
@@ -79,7 +110,7 @@ public class Opdracht1
 		
 	}
 	
-	public void Alg1(int i)
+	public void alg1(int i)
 	{
 		
 		boolean done = false;

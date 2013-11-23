@@ -9,9 +9,8 @@ public class apl
 	{
 		//measureAlg1();
 	
-		measureAlg2();
-		
-		
+		//measureAlg2();
+		measureAlg3();
 	}
 	
 	public static void measureAlg1()
@@ -50,7 +49,23 @@ public class apl
 		System.out.println("Running time algorithm 2, N = 10000000: " + runningTimeAlg210000000);
 	}
 	
-	
+	public static void measureAlg3()
+	{
+		long runningTimeAlg35000000 = opdracht1Obj.measureRunningTimeAlg3(5000000);
+		System.out.println("Running time algorithm 3, N = 5000000: " + runningTimeAlg35000000);
+		
+		long runningTimeAlg310000000 = opdracht1Obj.measureRunningTimeAlg3(10000000);
+		System.out.println("Running time algorithm 3, N = 10000000: " + runningTimeAlg310000000);
+		
+		long runningTimeAlg320000000 = opdracht1Obj.measureRunningTimeAlg3(20000000);
+		System.out.println("Running time algorithm 3, N = 20000000: " + runningTimeAlg320000000);
+		
+		long runningTimeAlg340000000 = opdracht1Obj.measureRunningTimeAlg3(40000000);
+		System.out.println("Running time algorithm 3, N = 40000000: " + runningTimeAlg340000000);
+		
+		long runningTimeAlg380000000 = opdracht1Obj.measureRunningTimeAlg3(80000000);
+		System.out.println("Running time algorithm 3, N = 80000000: " + runningTimeAlg380000000);
+	}
 	
 	
 }
