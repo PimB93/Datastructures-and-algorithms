@@ -62,7 +62,8 @@ public class Opdracht1
 	{
 		int temp = arrayPos;		
 		a[arrayPos] = getal;
-		getal = temp;
+		a[getal] = temp;
+		
 		return a;
 	}
 	
@@ -73,11 +74,16 @@ public class Opdracht1
 		for(int i = 0; i < aantal; i++)
 		{
 			sortedArray[i] = i;			
+						
+		}
+		for(int i = 0; i < aantal; i++)
+		{
 			int getal = randInt(0, aantal);
+			
 			sortedArray = swap(sortedArray, sortedArray[i], getal);
 			
-			
 		}
+		
 	}
 	public void alg2(int aantal)
 	{		
