@@ -7,23 +7,23 @@ public class apl
    
 	public static void main(String args[])
 	{
-		//measureAlg1();
-	
-		//measureAlg2();
+		measureAlg1();
+		measureAlg2();
 		measureAlg3();
 	}
 	
 	public static void measureAlg1()
 	{
+	
 		long runningTimeAlg15000 = opdracht1Obj.measureRunningTimeAlg1(5000);
 		System.out.println("Running time algorithm 1, N = 5000: " + runningTimeAlg15000);
 		
 		long runningTimeAlg110000 = opdracht1Obj.measureRunningTimeAlg1(10000);
 		System.out.println("Running time algorithm 1, N = 100000: " + runningTimeAlg110000);
-		
+	
 		long runningTimeAlg120000 = opdracht1Obj.measureRunningTimeAlg1(20000);
 		System.out.println("Running time algorithm 1, N = 20000: " + runningTimeAlg120000);
-		
+	
 		long runningTimeAlg150000 = opdracht1Obj.measureRunningTimeAlg1(50000);
 		System.out.println("Running time algorithm 1, N = 50000: " + runningTimeAlg150000);
 		

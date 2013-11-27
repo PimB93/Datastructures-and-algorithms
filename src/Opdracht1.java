@@ -54,62 +54,58 @@ public class Opdracht1
 	
 	private int randInt(int min,int max)	
 	{
-		return min + (int)(Math.random() * max);
+		return min + (int)(Math.random() * (max+1));  // 2 statements??
 		
 	}
 	
-	public int[] swap(int [] a, int arrayPos, int getal )
+	public int[] swap(int [] a, int arrayPos, int getal )//4 statements
 	{
-		int temp = arrayPos;		
-		a[arrayPos] = getal;
-		a[getal] = temp;
+		int temp = arrayPos;		 //1 statement
+		a[arrayPos] = getal;         //1 statement
+		a[getal] = temp;			 //1 statement
 		
-		return a;
+		return a;					 //1 statement
 	}
 	
+	//algoritme 3 wel of niet zelfde getallen? staat niet expliciet in de opdracht..
 	public void alg3(int aantal)
 	{
-		int[] sortedArray = new int[aantal];
+		int[] sortedArray = new int[aantal]; //1  1 statement
 		
-		for(int i = 0; i < aantal; i++)
+		for(int i = 0; i < aantal; i++) //4	 3 statement + 1 check
 		{
 			sortedArray[i] = i;			
-						
 		}
-		for(int i = 0; i < aantal; i++)
+		for(int i = 0; i < aantal; i++) //6 5 statement + 1 check
 		{
 			int getal = randInt(0, aantal);
-			
-			sortedArray = swap(sortedArray, sortedArray[i], getal);
-			
+			sortedArray = swap(sortedArray, sortedArray[i], getal);	
 		}
 		
 	}
 	public void alg2(int aantal)
 	{		
-		int[] sortedArray = new int[aantal];	
-		boolean[] used = new boolean[sortedArray.length + 1];
-		boolean done = false;	
-		while(!done)
-		{
-									
-				for(int j = 0; j < aantal ; j++)
+		int[] sortedArray = new int[aantal];	//1 	1 statement
+		boolean[] used = new boolean[sortedArray.length+1]; //2 statement
+		boolean done = false;	// 1 statement
+		while(!done) //2 1 check + 1 statement
+		{					
+				for(int j = 0; j < aantal ; j++) //11  8statements and 3 check
 				{		
-				boolean placed = false;
-				while(!placed){
-				int getal = randInt(0, aantal + 1);
-				
-				if(!used[getal] )
-				{
-					sortedArray[j] = getal;
-					used[getal] = true;
-					placed = true;
+						boolean placed = false;
+						while(!placed)
+						{
+							int getal = randInt(0, aantal );
+							
+								if(!used[getal] )
+								{
+									sortedArray[j] = getal;
+									used[getal] = true;
+									placed = true;
+								}
+						}				
 				}
-				
-				}				
-					}
-				
-			done = true;		
+			done = true;		//1 statement
 		}
 			
 		
@@ -119,25 +115,23 @@ public class Opdracht1
 	public void alg1(int i)
 	{
 		
-		boolean done = false;
+		boolean done = false;  //1 statement
 		
 		
-		while(!done)
+		while(!done)    //2  1 statement + 1 check
 		{
-			int getal = randInt(0,i);
+			int getal = randInt(0,i);    // 1 statement??
 			
-			if(!collectieList.contains(getal))
+			if(!collectieList.contains(getal)) //2  1 statement + 1 check
 			{
-				collectieList.add(getal);
-				//System.out.println("Collectie2 " + getal);		
-				
+				collectieList.add(getal);     //1  1 statement
+			//	System.out.println("Collectie2 " + getal);		
 			}
 			
-			if(collectieList.size() == i)
+			if(collectieList.size() == i)  //2  1 statement + 1 check
 			{
-				done = true;
+				done = true;               //1  1 statement
 			}
-			
 		}    
 			
 		
