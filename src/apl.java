@@ -7,9 +7,10 @@ public class apl
    
 	public static void main(String args[])
 	{
-		measureAlg1();
-		measureAlg2();
+		//measureAlg1();
+		//measureAlg2();
 		measureAlg3();
+		//opdracht1Obj.alg3(10);
 	}
 	
 	public static void measureAlg1()

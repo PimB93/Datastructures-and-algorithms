@@ -13,19 +13,7 @@ public class Opdracht1
 		collectieList = new ArrayList<Integer>();
 	}
 	
-	public void Fill(int aantal)
-	{
-		collectie = new int[aantal];
-		for(int i=0; i< aantal; i++)
-		{
-			collectie[i] = randInt(0,aantal);
-			
-			
-			System.out.println("collectie1 " + collectie[i]);
-		}
-		
 	
-	}
 	public long measureRunningTimeAlg1(int i)
 	{
 		long startTime = System.currentTimeMillis();		
@@ -54,35 +42,38 @@ public class Opdracht1
 	
 	private int randInt(int min,int max)	
 	{
-		return min + (int)(Math.random() * (max+1));  // 2 statements??
+		return min + (int)(Math.random() * (max));  // 2 statements??
 		
 	}
 	
-	public int[] swap(int [] a, int arrayPos, int getal )//4 statements
-	{
-		int temp = arrayPos;		 //1 statement
-		a[arrayPos] = getal;         //1 statement
-		a[getal] = temp;			 //1 statement
-		
-		return a;					 //1 statement
-	}
 	
-	//algoritme 3 wel of niet zelfde getallen? staat niet expliciet in de opdracht..
+	
 	public void alg3(int aantal)
 	{
-		int[] sortedArray = new int[aantal]; //1  1 statement
+		int[] sortedArray = new int[aantal];
 		
-		for(int i = 0; i < aantal; i++) //4	 3 statement + 1 check
+		for(int i = 0; i < aantal; i++)
 		{
-			sortedArray[i] = i;			
+			sortedArray[i] = i;		
+			
+						
 		}
-		for(int i = 0; i < aantal; i++) //6 5 statement + 1 check
+		for(int i = 0; i < aantal; i++)
 		{
-			int getal = randInt(0, aantal);
-			sortedArray = swap(sortedArray, sortedArray[i], getal);	
+			int randomPos = randInt(0, aantal);
+			int temp = sortedArray[i];
+			sortedArray[i] = sortedArray[randomPos];
+			sortedArray[randomPos] = temp; 
+			
+			
 		}
 		
+//		for(int j = 0; j < aantal ; j++)
+//		{	
+//			System.out.println(sortedArray[j]);
+//		}
 	}
+		
 	public void alg2(int aantal)
 	{		
 		int[] sortedArray = new int[aantal];	//1 	1 statement
@@ -136,39 +127,5 @@ public class Opdracht1
 			
 		
 	}
-//	public void Alg1(int[] collectie)
-//	{
-//		System.out.println("new");
-//		for(int i : collectie)
-//		{
-//			System.out.println("collectie " + i);
-//		}
-//		
-//		boolean gevonden = false;
-//		int[] sortedCollectie = collectie;
-//		System.out.println("nieuwe array");
-//		for(int i=0; i< sortedCollectie.length; i++)
-//		{
-//			do
-//			{
-//				    int getal = randInt(0,collectie.length+1);
-//					for(int j =0; j < sortedCollectie.length; j++)
-//					{
-//						if(getal == sortedCollectie[j])
-//						{
-//							gevonden =true;
-//							break;
-//						}
-//						if(!gevonden)
-//						{
-//							sortedCollectie[i] = getal;
-//						}
-//					}
-//			}
-//			while(!gevonden);
-//			System.out.println("nieuwe array cijfer: " +sortedCollectie[i]); 
-//				
-//		}
-//				
-//	}
+
 }
