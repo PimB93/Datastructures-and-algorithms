@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.DuplicateFormatFlagsException;
+import java.util.Random;
 
 
 public class Opdracht1 
@@ -40,10 +41,11 @@ public class Opdracht1
 		return duration;
 	}
 	
-	private int randInt(int min,int max)	
+	private int randInt(int max)	
 	{
-		return min + (int)(Math.random() * (max));  // 2 statements??
-		
+		Random random = new Random();
+		//return min + (int)(Math.random() * (max));  // 2 statements??
+		return random.nextInt(max);
 	}
 	
 	
@@ -60,7 +62,7 @@ public class Opdracht1
 		}
 		for(int i = 0; i < aantal; i++)
 		{
-			int randomPos = randInt(0, aantal);
+			int randomPos = randInt(aantal);
 			int temp = sortedArray[i];
 			sortedArray[i] = sortedArray[randomPos];
 			sortedArray[randomPos] = temp; 
@@ -86,7 +88,7 @@ public class Opdracht1
 						boolean placed = false;
 						while(!placed)
 						{
-							int getal = randInt(0, aantal );
+							int getal = randInt(aantal );
 							
 								if(!used[getal] )
 								{
@@ -111,7 +113,7 @@ public class Opdracht1
 		
 		while(!done)    //2  1 statement + 1 check
 		{
-			int getal = randInt(0,i);    // 1 statement??
+			int getal = randInt(i);    // 1 statement??
 			
 			if(!collectieList.contains(getal)) //2  1 statement + 1 check
 			{

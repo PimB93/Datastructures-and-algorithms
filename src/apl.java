@@ -7,29 +7,32 @@ public class apl
    
 	public static void main(String args[])
 	{
-		//measureAlg1();
+		
+		measureAlg1();
 		//measureAlg2();
-		measureAlg3();
+	//	measureAlg3();
 		//opdracht1Obj.alg3(10);
 	}
 	
 	public static void measureAlg1()
 	{
-	
-		long runningTimeAlg15000 = opdracht1Obj.measureRunningTimeAlg1(5000);
-		System.out.println("Running time algorithm 1, N = 5000: " + runningTimeAlg15000);
+	    
+			long runningTimeAlg15000 = opdracht1Obj.measureRunningTimeAlg1(5000);
+			System.out.println("Running time algorithm 1, N = 5000: " + runningTimeAlg15000);
+			
+			long runningTimeAlg110000 = opdracht1Obj.measureRunningTimeAlg1(10000);
+			System.out.println("Running time algorithm 1, N = 100000: " + runningTimeAlg110000);
 		
-		long runningTimeAlg110000 = opdracht1Obj.measureRunningTimeAlg1(10000);
-		System.out.println("Running time algorithm 1, N = 100000: " + runningTimeAlg110000);
-	
-		long runningTimeAlg120000 = opdracht1Obj.measureRunningTimeAlg1(20000);
-		System.out.println("Running time algorithm 1, N = 20000: " + runningTimeAlg120000);
-	
-		long runningTimeAlg150000 = opdracht1Obj.measureRunningTimeAlg1(50000);
-		System.out.println("Running time algorithm 1, N = 50000: " + runningTimeAlg150000);
+			long runningTimeAlg120000 = opdracht1Obj.measureRunningTimeAlg1(20000);
+			System.out.println("Running time algorithm 1, N = 20000: " + runningTimeAlg120000);
 		
-		long runningTimeAlg1100000 = opdracht1Obj.measureRunningTimeAlg1(100000);
-		System.out.println("Running time algorithm 1, N = 100000: " + runningTimeAlg1100000);
+			long runningTimeAlg150000 = opdracht1Obj.measureRunningTimeAlg1(50000);
+			System.out.println("Running time algorithm 1, N = 50000: " + runningTimeAlg150000);
+			
+			long runningTimeAlg1100000 = opdracht1Obj.measureRunningTimeAlg1(100000);
+			System.out.println("Running time algorithm 1, N = 100000: " + runningTimeAlg1100000);
+		    System.out.println("done");	
+	    
 	}
 	
 	public static void measureAlg2()
@@ -54,9 +57,10 @@ public class apl
 	{
 		long runningTimeAlg35000000 = opdracht1Obj.measureRunningTimeAlg3(5000000);
 		System.out.println("Running time algorithm 3, N = 5000000: " + runningTimeAlg35000000);
+		System.out.println("Running time algorithm 3, N = 5000000: sec: " + runningTimeAlg35000000/1000);
 		
 		long runningTimeAlg310000000 = opdracht1Obj.measureRunningTimeAlg3(10000000);
-		System.out.println("Running time algorithm 3, N = 10000000: " + runningTimeAlg310000000);
+		System.out.println("Running time algorithm 3, N = 10000000: sec: " + runningTimeAlg310000000/1000);
 		
 		long runningTimeAlg320000000 = opdracht1Obj.measureRunningTimeAlg3(20000000);
 		System.out.println("Running time algorithm 3, N = 20000000: " + runningTimeAlg320000000);
