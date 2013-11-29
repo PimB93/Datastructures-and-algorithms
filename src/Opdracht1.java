@@ -1,20 +1,33 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.DuplicateFormatFlagsException;
+
 import java.util.Random;
 
+
+/**
+ * 
+ * @author Pim Beuwer en Ralph de Groot
+ * In deze class is opdracht 1 van het vak Datastructuren en Algoritmiek uitgewerkt. 
+ * In deze opdracht is het de bedoeling dat we met behulp van een aantal random gegenereerde getallen een array vullen volgens een algoritme.
+ * Vervolgens moeten we een schatting maken van de ingenomen tijd van het algoritme waarna we die schatting moeten vergelijken met de werkelijke metingen.
+ */
 
 public class Opdracht1 
 {
 	
 	ArrayList<Integer> collectieList;
-	
+	/**
+	 * Constructor die een arraylist initialiseert.
+	 */
 	public Opdracht1()
 	{
 		collectieList = new ArrayList<Integer>();
 	}
 	
-	
+	/**
+	 * 
+	 * @param i Het ingevoerde getal waarmee het algoritme gestart wordt
+	 * @return De gemeten tijd van algoritme 1
+	 */
 	public long measureRunningTimeAlg1(int i)
 	{
 		long startTime = System.currentTimeMillis();		
@@ -23,6 +36,11 @@ public class Opdracht1
 		long duration = endTime - startTime;
 		return duration;
 	}
+	/**
+	 * 
+	 * @param i Het ingevoerde getal waarmee het algoritme gestart wordt
+	 * @return De gemeten tijd van algoritme 2
+	 */
 	public long measureRunningTimeAlg2(int i)
 	{
 		long startTime = System.currentTimeMillis();		
@@ -31,7 +49,11 @@ public class Opdracht1
 		long duration = endTime - startTime;
 		return duration;
 	}
-	
+	/**
+	 * 
+	 * @param i Het ingevoerde getal waarmee het algoritme gestart wordt
+	 * @return De gemeten tijd van algoritme 3
+	 */
 	public long measureRunningTimeAlg3(int i)
 	{
 		long startTime = System.currentTimeMillis();		
@@ -41,14 +63,23 @@ public class Opdracht1
 		return duration;
 	}
 	
-	
-	private int randInt(int min,int max)	
+	/**
+	 * 
+	 * @param max Het ingevoerde getal die als grenst geldt bij het genereren van een random getal
+	 * @return	Een random getal tussen de 0 en max -1 
+	 */
+	private int randInt(int max)	
 	{
-		Random rand = new Random();
-		return rand.nextInt((max - min) ) + min; // 2 statements??
-		
+		Random random = new Random();
+		//return min + (int)(Math.random() * (max));  // 2 statements??
+		return random.nextInt(max);
+
 	}
 	
+	/**
+	 * 
+	 * @param array De array die geprint moet worden
+	 */
 	private void printArray(int[] array)
 	{
 		for(int i = 0; i < array.length; i++)
@@ -57,6 +88,10 @@ public class Opdracht1
 		}
 	}
 	
+	/**
+	 * 
+	 * @param aantal Het ingevoerde getal waar het algoritme mee moet werken
+	 */
 	public void alg3(int aantal )
 	{
 		int[] array = new int[aantal];
@@ -69,10 +104,12 @@ public class Opdracht1
 		}
 		for(int i = 0; i < aantal; i++)
 		{
-			int randomPos = randInt(0, aantal);
+
+			int randomPos = randInt(aantal);
 			int temp = array[i];
 			array[i] = array[randomPos];
 			array[randomPos] = temp; 
+
 			
 			
 		}
@@ -80,7 +117,10 @@ public class Opdracht1
 		//printArray(array);
 
 	}
-		
+	/**
+	 * 
+	 * @param aantal Het ingevoerde getal waar het algoritme mee moet werken
+	 */
 	public void alg2(int aantal)
 	{		
 		int[] array = new int[aantal];	//1 	1 statement
@@ -93,7 +133,7 @@ public class Opdracht1
 						boolean placed = false;
 						while(!placed)
 						{
-							int getal = randInt(0, aantal );
+							int getal = randInt(aantal );
 							
 								if(!used[getal] )
 								{
@@ -109,8 +149,11 @@ public class Opdracht1
 		//printArray(array);
 		
 	}
-	
-	public void alg1(int i)
+	/**
+	 * 
+	 * @param aantal Het ingevoerde getal waar het algoritme mee moet werken
+	 */
+	public void alg1(int aantal)
 	{
 		
 		boolean done = false;  //1 statement
@@ -118,15 +161,14 @@ public class Opdracht1
 		
 		while(!done)    //2  1 statement + 1 check
 		{
-			int getal = randInt(0,i);    // 1 statement??
+			int getal = randInt(aantal);    // 1 statement??
 			
 			if(!collectieList.contains(getal)) //2  1 statement + 1 check
 			{
 				collectieList.add(getal);     //1  1 statement
-			//	System.out.println("Collectie2 " + getal);		
 			}
 			
-			if(collectieList.size() == i)  //2  1 statement + 1 check
+			if(collectieList.size() == aantal)  //2  1 statement + 1 check
 			{
 				done = true;               //1  1 statement
 			}
