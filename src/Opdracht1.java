@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+
+
 import java.util.Random;
 
 
@@ -63,17 +65,18 @@ public class Opdracht1
 		return duration;
 	}
 	
+
 	/**
 	 * 
 	 * @param max Het ingevoerde getal die als grenst geldt bij het genereren van een random getal
 	 * @return	Een random getal tussen de 0 en max -1 
 	 */
+
 	private int randInt(int max)	
 	{
 		Random random = new Random();
 		//return min + (int)(Math.random() * (max));  // 2 statements??
 		return random.nextInt(max);
-
 	}
 	
 	/**
@@ -104,6 +107,7 @@ public class Opdracht1
 		}
 		for(int i = 0; i < aantal; i++)
 		{
+
 
 			int randomPos = randInt(aantal);
 			int temp = array[i];
@@ -161,7 +165,10 @@ public class Opdracht1
 		
 		while(!done)    //2  1 statement + 1 check
 		{
+
 			int getal = randInt(aantal);    // 1 statement??
+
+
 			
 			if(!collectieList.contains(getal)) //2  1 statement + 1 check
 			{
