@@ -13,7 +13,6 @@ public class apl
 	public static void main(String args[])
 	{
 		
-
 		//measureAlg1();
 		//measureAlg2();
 		//measureAlg3();
