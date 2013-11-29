@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.DuplicateFormatFlagsException;
+import java.util.Random;
 
 
 public class Opdracht1 
 {
-	int[] collectie;
+	
 	ArrayList<Integer> collectieList;
 	
 	public Opdracht1()
@@ -40,44 +41,50 @@ public class Opdracht1
 		return duration;
 	}
 	
+	
 	private int randInt(int min,int max)	
 	{
-		return min + (int)(Math.random() * (max));  // 2 statements??
+		Random rand = new Random();
+		return rand.nextInt((max - min) ) + min; // 2 statements??
 		
 	}
 	
-	
-	
-	public void alg3(int aantal)
+	private void printArray(int[] array)
 	{
-		int[] sortedArray = new int[aantal];
+		for(int i = 0; i < array.length; i++)
+		{
+			System.out.println(array[i]);
+		}
+	}
+	
+	public void alg3(int aantal )
+	{
+		int[] array = new int[aantal];
 		
 		for(int i = 0; i < aantal; i++)
 		{
-			sortedArray[i] = i;		
+			array[i] = i;		
 			
 						
 		}
 		for(int i = 0; i < aantal; i++)
 		{
 			int randomPos = randInt(0, aantal);
-			int temp = sortedArray[i];
-			sortedArray[i] = sortedArray[randomPos];
-			sortedArray[randomPos] = temp; 
+			int temp = array[i];
+			array[i] = array[randomPos];
+			array[randomPos] = temp; 
 			
 			
 		}
 		
-//		for(int j = 0; j < aantal ; j++)
-//		{	
-//			System.out.println(sortedArray[j]);
-//		}
+		//printArray(array);
+
 	}
 		
 	public void alg2(int aantal)
 	{		
-		int[] sortedArray = new int[aantal];	//1 	1 statement
-		boolean[] used = new boolean[sortedArray.length+1]; //2 statement
+		int[] array = new int[aantal];	//1 	1 statement
+		boolean[] used = new boolean[array.length ]; //2 statement
 		boolean done = false;	// 1 statement
 		while(!done) //2 1 check + 1 statement
 		{					
@@ -90,7 +97,7 @@ public class Opdracht1
 							
 								if(!used[getal] )
 								{
-									sortedArray[j] = getal;
+									array[j] = getal;
 									used[getal] = true;
 									placed = true;
 								}
@@ -99,7 +106,7 @@ public class Opdracht1
 			done = true;		//1 statement
 		}
 			
-		
+		//printArray(array);
 		
 	}
 	

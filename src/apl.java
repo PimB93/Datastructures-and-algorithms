@@ -9,8 +9,10 @@ public class apl
 	{
 		//measureAlg1();
 		//measureAlg2();
-		measureAlg3();
-		//opdracht1Obj.alg3(10);
+		//measureAlg3();
+		
+		
+		
 	}
 	
 	public static void measureAlg1()
