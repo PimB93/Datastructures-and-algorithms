@@ -17,11 +17,11 @@ public class Algoritme3
 	 */
 	public void alg3(int aantal )
 	{
-		
+		assert aantal >0 : "ongeldig aantal";
 		
 		for(int i = 0; i < aantal; i++)
 		{
-			collectie.set(i, i);		
+			collectie.add(i);		
 		}
 		for(int i = 0; i < aantal; i++)
 		{

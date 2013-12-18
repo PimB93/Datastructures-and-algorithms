@@ -28,10 +28,10 @@ public class Algoritme1 extends ListPrint
 	 */
 	public void alg1(int aantal)
 	{
+		assert aantal >0 : "ongeldig getal";
 		boolean done = false;  //1 statement
 		while(!done)    //2  1 statement + 1 check
 		{
-
 			int getal = TrekGetal.randInt(aantal);    // 1 statement??
 			if(!collectie.contains(getal)) //2  1 statement + 1 check
 			{

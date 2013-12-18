@@ -15,6 +15,7 @@ public class Algoritme2
 		 */
 		public void alg2(int aantal)
 		{		
+			assert aantal > 0 : "ongeldig getal";
 			boolean[] used = new boolean[collectie.size()]; //2 statement
 			boolean done = false;	// 1 statement
 			while(!done) //2 1 check + 1 statement
@@ -26,7 +27,8 @@ public class Algoritme2
 							{
 								int getal = TrekGetal.randInt(aantal);
 								
-									if(!used[getal] )
+								    assert used.length >= getal : "array out of bounds";
+									if(!used[getal])
 									{
 										collectie.set(j, getal);
 										used[getal] = true;
